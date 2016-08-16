@@ -13,7 +13,7 @@ protocol JobDetailsInteractorDelegate: class {
 }
 
 final class JobDetailsInteractor: JobDetailsInteractable {
-    private let jobsRepository: JobsRepository
+    private let jobsRepository: JobsRepositoryType
     weak var delegate: JobDetailsInteractorDelegate?
 
     var job: Job {
@@ -22,7 +22,7 @@ final class JobDetailsInteractor: JobDetailsInteractable {
         }
     }
 
-    init(jobsRepository: JobsRepository)  {
+    init(jobsRepository: JobsRepositoryType)  {
         self.jobsRepository = jobsRepository
         self.job = jobsRepository.randomJob()
     }

@@ -12,12 +12,12 @@
 		A21CEEF71D54E497001C67EF /* JobDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CEEF21D54E497001C67EF /* JobDetailsPresenter.swift */; };
 		A21CEEF81D54E497001C67EF /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CEEF31D54E497001C67EF /* JobDetailsViewController.swift */; };
 		A21CEEF91D54E497001C67EF /* JobRemovalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CEEF51D54E497001C67EF /* JobRemovalViewController.swift */; };
+		A28E82F61D63380600A9544E /* JobDetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E82F51D63380600A9544E /* JobDetailsInteractorTests.swift */; };
 		A2ACACEF1D6313D300E536C3 /* JobDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */; };
 		A2ACACF11D63157500E536C3 /* JobRemovalView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2ACACF01D63157500E536C3 /* JobRemovalView.storyboard */; };
 		A2F3982D1D520A560078A513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3982C1D520A550078A513 /* AppDelegate.swift */; };
 		A2F398341D520A560078A513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F398331D520A560078A513 /* Assets.xcassets */; };
 		A2F398371D520A560078A513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F398351D520A560078A513 /* LaunchScreen.storyboard */; };
-		A2F398421D520A560078A513 /* FlowCoordinatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F398411D520A560078A513 /* FlowCoordinatorsTests.swift */; };
 		A2F3984D1D520A980078A513 /* RootFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3984C1D520A980078A513 /* RootFlowCoordinator.swift */; };
 		A2F398591D523E5E0078A513 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F398581D523E5E0078A513 /* Job.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +38,7 @@
 		A21CEEF21D54E497001C67EF /* JobDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsPresenter.swift; sourceTree = "<group>"; };
 		A21CEEF31D54E497001C67EF /* JobDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
 		A21CEEF51D54E497001C67EF /* JobRemovalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobRemovalViewController.swift; sourceTree = "<group>"; };
+		A28E82F51D63380600A9544E /* JobDetailsInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsInteractorTests.swift; sourceTree = "<group>"; };
 		A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobDetailsView.storyboard; sourceTree = "<group>"; };
 		A2ACACF01D63157500E536C3 /* JobRemovalView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobRemovalView.storyboard; sourceTree = "<group>"; };
 		A2F398291D520A550078A513 /* FlowCoordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +47,6 @@
 		A2F398361D520A560078A513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2F398381D520A560078A513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2F3983D1D520A560078A513 /* FlowCoordinatorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowCoordinatorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2F398411D520A560078A513 /* FlowCoordinatorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorsTests.swift; sourceTree = "<group>"; };
 		A2F398431D520A560078A513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2F3984C1D520A980078A513 /* RootFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFlowCoordinator.swift; sourceTree = "<group>"; };
 		A2F398581D523E5E0078A513 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
@@ -99,6 +99,15 @@
 			path = "JobRemovalScene-MVC";
 			sourceTree = "<group>";
 		};
+		A28E82F41D6337EC00A9544E /* JobDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A28E82F51D63380600A9544E /* JobDetailsInteractorTests.swift */,
+			);
+			name = JobDetails;
+			path = Scenes/JobDetails;
+			sourceTree = "<group>";
+		};
 		A2F398201D520A550078A513 = {
 			isa = PBXGroup;
 			children = (
@@ -134,7 +143,7 @@
 		A2F398401D520A560078A513 /* FlowCoordinatorsTests */ = {
 			isa = PBXGroup;
 			children = (
-				A2F398411D520A560078A513 /* FlowCoordinatorsTests.swift */,
+				A28E82F41D6337EC00A9544E /* JobDetails */,
 				A2F398431D520A560078A513 /* Info.plist */,
 			);
 			path = FlowCoordinatorsTests;
@@ -266,7 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2F398421D520A560078A513 /* FlowCoordinatorsTests.swift in Sources */,
+				A28E82F61D63380600A9544E /* JobDetailsInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

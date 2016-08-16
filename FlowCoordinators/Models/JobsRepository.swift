@@ -8,12 +8,17 @@
 
 import Foundation
 
-final class JobsRepository {
+protocol JobsRepositoryType {
+    func randomJob() -> Job
+    func refreshJob(job: Job) -> Job
+}
+
+final class JobsRepository: JobsRepositoryType {
     func randomJob() -> Job {
         return Job(id: 123,
                    createdAt: NSDate(),
                    title: "iOS Developer",
-                   skills: ["Objective-C, Swift", "Xcode"])
+                   skills: ["Objective-C", "Swift", "Xcode"])
     }
 
     func refreshJob(job: Job) -> Job {
