@@ -14,13 +14,17 @@ protocol JobDetailsViewEventHandler { // This protocol could be named JobDetails
 }
 
 protocol JobDetailsViewInterface: class {
-    func displayJobTilte(title: String)
+    func displayTilte(title: String)
+    func displayCreationDate(date: String)
+    func displaySkills(skills: String)
 }
 
 final class JobDetailsViewController: UIViewController {
     private var eventHandler: JobDetailsViewEventHandler!
 
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var skillsLabel: UILabel!
 
     @IBAction private func refreshButtonTapped(sender: UIButton) {
         self.eventHandler.refreshButtonTapped()
@@ -32,8 +36,16 @@ final class JobDetailsViewController: UIViewController {
 }
 
 extension JobDetailsViewController: JobDetailsViewInterface {
-    func displayJobTilte(title: String) {
+    func displayTilte(title: String) {
         titleLabel.text = title
+    }
+
+    func displaySkills(skills: String) {
+        skillsLabel.text = skills
+    }
+
+    func displayCreationDate(date: String) {
+        dateLabel.text = date
     }
 }
 

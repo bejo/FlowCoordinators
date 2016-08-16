@@ -41,6 +41,21 @@ extension JobDetailsPresenter: JobDetailsViewEventHandler {
 
 extension JobDetailsPresenter: JobDetailsInteractorDelegate {
     func jobDidChange() {
-        view?.displayJobTilte(interactor.job.title)
+        view?.displayTilte(interactor.job.title)
+        view?.displayCreationDate(stringFromDate(interactor.job.createdAt))
+        view?.displaySkills(stringFromSet(interactor.job.skills))
+    }
+}
+
+private extension JobDetailsPresenter {
+    func stringFromDate(date: NSDate) -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        return formatter.stringFromDate(date)
+    }
+
+    func stringFromSet(set: Set<String>) -> String {
+        let array:NSArray = Array(set)
+        return array.componentsJoinedByString(",")
     }
 }
