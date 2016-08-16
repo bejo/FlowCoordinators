@@ -37,17 +37,25 @@ extension JobDetailsPresenter: JobDetailsViewEventHandler {
     func refreshButtonTapped() {
         interactor.refreshJob()
     }
+
+    func viewDidLoad() {
+        displayJob()
+    }
 }
 
 extension JobDetailsPresenter: JobDetailsInteractorDelegate {
     func jobDidChange() {
-        view?.displayTilte(interactor.job.title)
-        view?.displayCreationDate(stringFromDate(interactor.job.createdAt))
-        view?.displaySkills(stringFromSet(interactor.job.skills))
+        displayJob()
     }
 }
 
 private extension JobDetailsPresenter {
+    func displayJob() {
+        view?.displayTilte(interactor.job.title)
+        view?.displayCreationDate(stringFromDate(interactor.job.createdAt))
+        view?.displaySkills(stringFromSet(interactor.job.skills))
+    }
+
     func stringFromDate(date: NSDate) -> String {
         let formatter = NSDateFormatter()
         formatter.dateStyle = .MediumStyle

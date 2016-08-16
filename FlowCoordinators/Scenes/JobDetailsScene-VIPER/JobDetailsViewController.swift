@@ -11,6 +11,7 @@ import UIKit
 protocol JobDetailsViewEventHandler { // This protocol could be named JobDetailsPresenterInterface, but I wanted to make JobDetailsViewController independent from the rest of the VIPER stack. 
     func removeButtonTapped()
     func refreshButtonTapped()
+    func viewDidLoad()
 }
 
 protocol JobDetailsViewInterface: class {
@@ -32,6 +33,10 @@ final class JobDetailsViewController: UIViewController {
 
     @IBAction private func removeButtonTapped(sender: UIButton) {
         self.eventHandler.removeButtonTapped()
+    }
+
+    override func viewDidLoad() {
+        self.eventHandler.viewDidLoad()
     }
 }
 
