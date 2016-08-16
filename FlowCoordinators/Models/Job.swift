@@ -12,5 +12,5 @@ struct Job {
     let id: Int
     let createdAt: NSDate
     let title: String
-    let skills: Set<String>
+    let skills: Array<String>
 }

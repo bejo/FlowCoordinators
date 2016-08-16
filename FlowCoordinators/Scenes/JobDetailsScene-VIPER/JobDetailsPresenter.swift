@@ -53,7 +53,7 @@ private extension JobDetailsPresenter {
     func displayJob() {
         view?.displayTilte(interactor.job.title)
         view?.displayCreationDate(stringFromDate(interactor.job.createdAt))
-        view?.displaySkills(stringFromSet(interactor.job.skills))
+        view?.displaySkills(stringFromArray(interactor.job.skills))
     }
 
     func stringFromDate(date: NSDate) -> String {
@@ -62,8 +62,8 @@ private extension JobDetailsPresenter {
         return formatter.stringFromDate(date)
     }
 
-    func stringFromSet(set: Set<String>) -> String {
-        let array:NSArray = Array(set)
-        return array.componentsJoinedByString(",")
+    func stringFromArray(array: Array<String>) -> String {
+        let nsarray:NSArray = array
+        return nsarray.componentsJoinedByString(", ")
     }
 }

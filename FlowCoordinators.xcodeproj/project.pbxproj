@@ -13,6 +13,7 @@
 		A21CEEF81D54E497001C67EF /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CEEF31D54E497001C67EF /* JobDetailsViewController.swift */; };
 		A21CEEF91D54E497001C67EF /* JobRemovalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CEEF51D54E497001C67EF /* JobRemovalViewController.swift */; };
 		A28E82F61D63380600A9544E /* JobDetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E82F51D63380600A9544E /* JobDetailsInteractorTests.swift */; };
+		A28E82F81D633DC200A9544E /* JobDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E82F71D633DC200A9544E /* JobDetailsPresenterTests.swift */; };
 		A2ACACEF1D6313D300E536C3 /* JobDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */; };
 		A2ACACF11D63157500E536C3 /* JobRemovalView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2ACACF01D63157500E536C3 /* JobRemovalView.storyboard */; };
 		A2F3982D1D520A560078A513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3982C1D520A550078A513 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		A21CEEF31D54E497001C67EF /* JobDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
 		A21CEEF51D54E497001C67EF /* JobRemovalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobRemovalViewController.swift; sourceTree = "<group>"; };
 		A28E82F51D63380600A9544E /* JobDetailsInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsInteractorTests.swift; sourceTree = "<group>"; };
+		A28E82F71D633DC200A9544E /* JobDetailsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsPresenterTests.swift; sourceTree = "<group>"; };
 		A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobDetailsView.storyboard; sourceTree = "<group>"; };
 		A2ACACF01D63157500E536C3 /* JobRemovalView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobRemovalView.storyboard; sourceTree = "<group>"; };
 		A2F398291D520A550078A513 /* FlowCoordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				A28E82F51D63380600A9544E /* JobDetailsInteractorTests.swift */,
+				A28E82F71D633DC200A9544E /* JobDetailsPresenterTests.swift */,
 			);
 			name = JobDetails;
 			path = Scenes/JobDetails;
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A28E82F61D63380600A9544E /* JobDetailsInteractorTests.swift in Sources */,
+				A28E82F81D633DC200A9544E /* JobDetailsPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
