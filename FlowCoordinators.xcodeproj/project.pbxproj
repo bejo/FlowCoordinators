@@ -12,8 +12,9 @@
 		A21CEEF71D54E497001C67EF /* JobDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CEEF21D54E497001C67EF /* JobDetailsPresenter.swift */; };
 		A21CEEF81D54E497001C67EF /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CEEF31D54E497001C67EF /* JobDetailsViewController.swift */; };
 		A21CEEF91D54E497001C67EF /* JobRemovalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CEEF51D54E497001C67EF /* JobRemovalViewController.swift */; };
+		A2ACACEF1D6313D300E536C3 /* JobDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */; };
+		A2ACACF11D63157500E536C3 /* JobRemovalView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2ACACF01D63157500E536C3 /* JobRemovalView.storyboard */; };
 		A2F3982D1D520A560078A513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3982C1D520A550078A513 /* AppDelegate.swift */; };
-		A2F398321D520A560078A513 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F398301D520A560078A513 /* Main.storyboard */; };
 		A2F398341D520A560078A513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F398331D520A560078A513 /* Assets.xcassets */; };
 		A2F398371D520A560078A513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F398351D520A560078A513 /* LaunchScreen.storyboard */; };
 		A2F398421D520A560078A513 /* FlowCoordinatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F398411D520A560078A513 /* FlowCoordinatorsTests.swift */; };
@@ -37,9 +38,10 @@
 		A21CEEF21D54E497001C67EF /* JobDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsPresenter.swift; sourceTree = "<group>"; };
 		A21CEEF31D54E497001C67EF /* JobDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
 		A21CEEF51D54E497001C67EF /* JobRemovalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobRemovalViewController.swift; sourceTree = "<group>"; };
+		A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobDetailsView.storyboard; sourceTree = "<group>"; };
+		A2ACACF01D63157500E536C3 /* JobRemovalView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobRemovalView.storyboard; sourceTree = "<group>"; };
 		A2F398291D520A550078A513 /* FlowCoordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F3982C1D520A550078A513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A2F398311D520A560078A513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2F398331D520A560078A513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2F398361D520A560078A513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2F398381D520A560078A513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			children = (
 				A21CEEF11D54E497001C67EF /* JobDetailsInteractor.swift */,
 				A21CEEF21D54E497001C67EF /* JobDetailsPresenter.swift */,
+				A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */,
 				A21CEEF31D54E497001C67EF /* JobDetailsViewController.swift */,
 			);
 			path = "JobDetailsScene-VIPER";
@@ -90,6 +93,7 @@
 		A21CEEF41D54E497001C67EF /* JobRemovalScene-MVC */ = {
 			isa = PBXGroup;
 			children = (
+				A2ACACF01D63157500E536C3 /* JobRemovalView.storyboard */,
 				A21CEEF51D54E497001C67EF /* JobRemovalViewController.swift */,
 			);
 			path = "JobRemovalScene-MVC";
@@ -120,7 +124,6 @@
 				A21CEEEF1D54E497001C67EF /* Scenes */,
 				A2F3982C1D520A550078A513 /* AppDelegate.swift */,
 				A2F3984C1D520A980078A513 /* RootFlowCoordinator.swift */,
-				A2F398301D520A560078A513 /* Main.storyboard */,
 				A2F398331D520A560078A513 /* Assets.xcassets */,
 				A2F398351D520A560078A513 /* LaunchScreen.storyboard */,
 				A2F398381D520A560078A513 /* Info.plist */,
@@ -227,9 +230,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2ACACF11D63157500E536C3 /* JobRemovalView.storyboard in Resources */,
+				A2ACACEF1D6313D300E536C3 /* JobDetailsView.storyboard in Resources */,
 				A2F398371D520A560078A513 /* LaunchScreen.storyboard in Resources */,
 				A2F398341D520A560078A513 /* Assets.xcassets in Resources */,
-				A2F398321D520A560078A513 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,14 +281,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A2F398301D520A560078A513 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A2F398311D520A560078A513 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A2F398351D520A560078A513 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

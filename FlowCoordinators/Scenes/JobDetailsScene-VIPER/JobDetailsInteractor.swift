@@ -28,6 +28,6 @@ final class JobDetailsInteractor: JobDetailsInteractable {
     }
 
     func refreshJob() {
-        jobsRepository.refreshJob(job)
+        job = jobsRepository.refreshJob(job)
     }
 }

@@ -18,7 +18,7 @@ protocol JobDetailsViewInterface: class {
 }
 
 final class JobDetailsViewController: UIViewController {
-    var eventHandler: JobDetailsViewEventHandler!
+    private var eventHandler: JobDetailsViewEventHandler!
 
     @IBOutlet private weak var titleLabel: UILabel!
 
@@ -26,7 +26,7 @@ final class JobDetailsViewController: UIViewController {
         self.eventHandler.refreshButtonTapped()
     }
 
-    @IBAction func removeButtonTapped(sender: UIButton) {
+    @IBAction private func removeButtonTapped(sender: UIButton) {
         self.eventHandler.removeButtonTapped()
     }
 }
@@ -42,7 +42,7 @@ typealias JobDetailsSceneConstructor = (JobDetailsRouterable, JobsRepository) ->
 
 extension JobDetailsViewController {
     static func createJobDetailsSceneWithRouter(router: JobDetailsRouterable, jobsRepository: JobsRepository) -> UIViewController {
-        let jobDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! JobDetailsViewController
+        let jobDetailsVC = UIStoryboard(name: "JobDetailsView", bundle: nil).instantiateInitialViewController() as! JobDetailsViewController
 
         let interactor = JobDetailsInteractor(jobsRepository: jobsRepository)
         let presenter = JobDetailsPresenter(router: router, interactor: interactor, view: jobDetailsVC)

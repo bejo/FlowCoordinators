@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="E9q-Mx-Jtz">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Job Details View Controller-->
+        <scene sceneID="Xkv-or-lDJ">
+            <objects>
+                <viewController id="E9q-Mx-Jtz" customClass="JobDetailsViewController" customModule="FlowCoordinators" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gt1-YF-Qs6"/>
+                        <viewControllerLayoutGuide type="bottom" id="pgz-bw-Cc8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xNz-ia-2h5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="JOB TITLE:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7at-jq-KMv">
+                                <rect key="frame" x="20" y="20" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsJ-Pq-wY3">
+                                <rect key="frame" x="114" y="20" width="466" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTk-a0-zLT">
+                                <rect key="frame" x="20" y="49" width="53" height="30"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshButtonTapped:" destination="E9q-Mx-Jtz" eventType="touchUpInside" id="xyk-HV-Gbc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qep-Bm-4He">
+                                <rect key="frame" x="20" y="87" width="55" height="30"/>
+                                <state key="normal" title="Remove"/>
+                                <connections>
+                                    <action selector="removeButtonTapped:" destination="E9q-Mx-Jtz" eventType="touchUpInside" id="Xhk-Nb-czO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZsJ-Pq-wY3" firstAttribute="leading" secondItem="7at-jq-KMv" secondAttribute="trailing" constant="8" id="EEi-Es-9IH"/>
+                            <constraint firstItem="7at-jq-KMv" firstAttribute="top" secondItem="Gt1-YF-Qs6" secondAttribute="bottom" id="N3M-H4-yD9"/>
+                            <constraint firstItem="7at-jq-KMv" firstAttribute="leading" secondItem="xNz-ia-2h5" secondAttribute="leadingMargin" id="bEE-J9-79A"/>
+                            <constraint firstItem="ZsJ-Pq-wY3" firstAttribute="top" secondItem="Gt1-YF-Qs6" secondAttribute="bottom" id="d2B-2p-Axe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZsJ-Pq-wY3" secondAttribute="trailing" id="xXF-br-SEj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="ZsJ-Pq-wY3" id="tn1-qd-yZf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qry-03-PiY" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="695"/>
+        </scene>
+    </scenes>
+</document>

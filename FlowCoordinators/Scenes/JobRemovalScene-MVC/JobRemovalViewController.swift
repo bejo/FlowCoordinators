@@ -30,7 +30,7 @@ typealias JobRemovalSceneConstructor = (JobRemovalViewDelegate) -> UIViewControl
 
 extension JobRemovalViewController {
     static func createJobRemovalSceneWithEventHandler(handler: JobRemovalViewDelegate) -> UIViewController {
-        let jobRemovalVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("JobRemovalViewController") as! JobRemovalViewController
+        let jobRemovalVC = UIStoryboard(name: "JobRemovalView", bundle: nil).instantiateInitialViewController() as! JobRemovalViewController
         jobRemovalVC.delegate = handler
         return jobRemovalVC
     }
