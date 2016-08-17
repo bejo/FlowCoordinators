@@ -22,9 +22,9 @@ final class JobDetailsInteractor: JobDetailsInteractable {
         }
     }
 
-    init(jobsRepository: JobsRepositoryType)  {
+    init(jobsRepository: JobsRepositoryType, jobID: Int)  {
         self.jobsRepository = jobsRepository
-        self.job = jobsRepository.randomJob()
+        self.job = jobsRepository.jobWithID(jobID)
     }
 
     func refreshJob() {

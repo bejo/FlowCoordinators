@@ -34,7 +34,7 @@ final class RootFlowCoordinator {
     }
 
     func start() {
-        let jobDetailsVC = createJobDetails(self, jobsRepository)
+        let jobDetailsVC = createJobDetails(self, jobsRepository, 123)
         jobDetailsViewController = jobDetailsVC
 
         window.rootViewController = jobDetailsVC

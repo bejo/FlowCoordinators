@@ -18,7 +18,7 @@ class JobDetailsInteractorTests: XCTestCase {
         super.setUp()
         jobsRepoSpy = JobsRepositorySpy()
         delegateSpy = JobDetailsInteractorDelegateSpy()
-        sut = JobDetailsInteractor(jobsRepository: jobsRepoSpy)
+        sut = JobDetailsInteractor(jobsRepository: jobsRepoSpy, jobID: 123)
         sut.delegate = delegateSpy
     }
 
@@ -26,7 +26,7 @@ class JobDetailsInteractorTests: XCTestCase {
         let job = sut.job
 
         XCTAssertEqual(job.id, 123, "Job ID should be equal to the mocked value.")
-        XCTAssertTrue(jobsRepoSpy.didInvokeRandomJob, "Interactor should ask repo for a random job.")
+        XCTAssertEqual(jobsRepoSpy.interceptedJobID, 123, "Interactor should intercept a correct ID of the mocked job.")
     }
     
     func testJobRefresh() {
@@ -38,13 +38,14 @@ class JobDetailsInteractorTests: XCTestCase {
 }
 
 private final class JobsRepositorySpy: JobsRepositoryType {
-    var didInvokeRandomJob = false
-    func randomJob() -> Job {
-        didInvokeRandomJob = true
-        return Job(id: 123,
+    var interceptedJobID: Int? = nil
+    private func jobWithID(jobID: Int) -> Job {
+        interceptedJobID = jobID
+        return Job(id: jobID,
                    createdAt: NSDate(),
                    title: "Test job",
                    skills: ["test skill #1", "test skill #2"])
+
     }
 
     var didInvokeRefreshJob = false

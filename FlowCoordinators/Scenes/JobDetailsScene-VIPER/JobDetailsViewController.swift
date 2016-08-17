@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol JobDetailsViewEventHandler { // This protocol could be named JobDetailsPresenterInterface, but I wanted to make JobDetailsViewController independent from the rest of the VIPER stack. 
+protocol JobDetailsViewEventHandler {
     func removeButtonTapped()
     func refreshButtonTapped()
     func viewDidLoad()
@@ -55,13 +55,15 @@ extension JobDetailsViewController: JobDetailsViewInterface {
 }
 
 // MARK: Constructor
-typealias JobDetailsSceneConstructor = (JobDetailsRouterable, JobsRepository) -> UIViewController
+typealias JobDetailsSceneConstructor = (JobDetailsRouterable, JobsRepository, Int) -> UIViewController
 
 extension JobDetailsViewController {
-    static func createJobDetailsSceneWithRouter(router: JobDetailsRouterable, jobsRepository: JobsRepository) -> UIViewController {
+    static func createJobDetailsSceneWithRouter(router: JobDetailsRouterable,
+                                                jobsRepository: JobsRepository,
+                                                jobID: Int) -> UIViewController {
         let jobDetailsVC = UIStoryboard(name: "JobDetailsView", bundle: nil).instantiateInitialViewController() as! JobDetailsViewController
 
-        let interactor = JobDetailsInteractor(jobsRepository: jobsRepository)
+        let interactor = JobDetailsInteractor(jobsRepository: jobsRepository, jobID: jobID)
         let presenter = JobDetailsPresenter(router: router, interactor: interactor, view: jobDetailsVC)
         interactor.delegate = presenter
         jobDetailsVC.eventHandler = presenter

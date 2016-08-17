@@ -9,13 +9,13 @@
 import Foundation
 
 protocol JobsRepositoryType {
-    func randomJob() -> Job
+    func jobWithID(jobID: Int) -> Job
     func refreshJob(job: Job) -> Job
 }
 
 final class JobsRepository: JobsRepositoryType {
-    func randomJob() -> Job {
-        return Job(id: 123,
+    func jobWithID(jobID: Int) -> Job {
+        return Job(id: jobID,
                    createdAt: NSDate(),
                    title: "iOS Developer",
                    skills: ["Objective-C", "Swift", "Xcode"])
