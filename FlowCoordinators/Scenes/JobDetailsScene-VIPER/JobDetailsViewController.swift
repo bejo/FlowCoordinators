@@ -36,6 +36,7 @@ final class JobDetailsViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.eventHandler.viewDidLoad()
     }
 }

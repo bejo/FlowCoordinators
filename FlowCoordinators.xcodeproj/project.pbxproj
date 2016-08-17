@@ -21,6 +21,9 @@
 		A2F398371D520A560078A513 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F398351D520A560078A513 /* LaunchScreen.storyboard */; };
 		A2F3984D1D520A980078A513 /* RootFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3984C1D520A980078A513 /* RootFlowCoordinator.swift */; };
 		A2F398591D523E5E0078A513 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F398581D523E5E0078A513 /* Job.swift */; };
+		A2F6E28F1D64554F00E25801 /* JobDetails2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F6E28E1D64554F00E25801 /* JobDetails2ViewController.swift */; };
+		A2F6E2911D64578900E25801 /* JobDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F6E2901D64578900E25801 /* JobDetailsViewModel.swift */; };
+		A2F6E2931D6460D100E25801 /* JobDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2F6E2921D6460D100E25801 /* JobDetailsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		A2F398431D520A560078A513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2F3984C1D520A980078A513 /* RootFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFlowCoordinator.swift; sourceTree = "<group>"; };
 		A2F398581D523E5E0078A513 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		A2F6E28E1D64554F00E25801 /* JobDetails2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetails2ViewController.swift; sourceTree = "<group>"; };
+		A2F6E2901D64578900E25801 /* JobDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsViewModel.swift; sourceTree = "<group>"; };
+		A2F6E2921D6460D100E25801 /* JobDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobDetailsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 		A21CEEEF1D54E497001C67EF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A2F6E28D1D64552200E25801 /* JobDetailsScene-MVVM */,
 				A21CEEF01D54E497001C67EF /* JobDetailsScene-VIPER */,
 				A21CEEF41D54E497001C67EF /* JobRemovalScene-MVC */,
 			);
@@ -161,6 +168,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A2F6E28D1D64552200E25801 /* JobDetailsScene-MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				A2F6E28E1D64554F00E25801 /* JobDetails2ViewController.swift */,
+				A2F6E2901D64578900E25801 /* JobDetailsViewModel.swift */,
+				A2F6E2921D6460D100E25801 /* JobDetailsView.xib */,
+			);
+			path = "JobDetailsScene-MVVM";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F6E2931D6460D100E25801 /* JobDetailsView.xib in Resources */,
 				A2ACACF11D63157500E536C3 /* JobRemovalView.storyboard in Resources */,
 				A2ACACEF1D6313D300E536C3 /* JobDetailsView.storyboard in Resources */,
 				A2F398371D520A560078A513 /* LaunchScreen.storyboard in Resources */,
@@ -270,7 +288,9 @@
 				A21CEEF81D54E497001C67EF /* JobDetailsViewController.swift in Sources */,
 				A21CEEE41D548348001C67EF /* JobsRepository.swift in Sources */,
 				A2F3982D1D520A560078A513 /* AppDelegate.swift in Sources */,
+				A2F6E28F1D64554F00E25801 /* JobDetails2ViewController.swift in Sources */,
 				A21CEEF71D54E497001C67EF /* JobDetailsPresenter.swift in Sources */,
+				A2F6E2911D64578900E25801 /* JobDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
