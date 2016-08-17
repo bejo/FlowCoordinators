@@ -12,8 +12,6 @@
 		A21CEEF71D54E497001C67EF /* JobDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CEEF21D54E497001C67EF /* JobDetailsPresenter.swift */; };
 		A21CEEF81D54E497001C67EF /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CEEF31D54E497001C67EF /* JobDetailsViewController.swift */; };
 		A21CEEF91D54E497001C67EF /* JobRemovalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CEEF51D54E497001C67EF /* JobRemovalViewController.swift */; };
-		A28E82F61D63380600A9544E /* JobDetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E82F51D63380600A9544E /* JobDetailsInteractorTests.swift */; };
-		A28E82F81D633DC200A9544E /* JobDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E82F71D633DC200A9544E /* JobDetailsPresenterTests.swift */; };
 		A2ACACEF1D6313D300E536C3 /* JobDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */; };
 		A2ACACF11D63157500E536C3 /* JobRemovalView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2ACACF01D63157500E536C3 /* JobRemovalView.storyboard */; };
 		A2F3982D1D520A560078A513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3982C1D520A550078A513 /* AppDelegate.swift */; };
@@ -24,6 +22,9 @@
 		A2F6E28F1D64554F00E25801 /* JobDetails2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F6E28E1D64554F00E25801 /* JobDetails2ViewController.swift */; };
 		A2F6E2911D64578900E25801 /* JobDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F6E2901D64578900E25801 /* JobDetailsViewModel.swift */; };
 		A2F6E2931D6460D100E25801 /* JobDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2F6E2921D6460D100E25801 /* JobDetailsView.xib */; };
+		A2F6E2971D64692200E25801 /* JobDetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F6E2951D64692200E25801 /* JobDetailsInteractorTests.swift */; };
+		A2F6E2981D64692200E25801 /* JobDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F6E2961D64692200E25801 /* JobDetailsPresenterTests.swift */; };
+		A2F6E29B1D64697900E25801 /* JobDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F6E29A1D64697900E25801 /* JobDetailsViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +43,6 @@
 		A21CEEF21D54E497001C67EF /* JobDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsPresenter.swift; sourceTree = "<group>"; };
 		A21CEEF31D54E497001C67EF /* JobDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
 		A21CEEF51D54E497001C67EF /* JobRemovalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobRemovalViewController.swift; sourceTree = "<group>"; };
-		A28E82F51D63380600A9544E /* JobDetailsInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsInteractorTests.swift; sourceTree = "<group>"; };
-		A28E82F71D633DC200A9544E /* JobDetailsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsPresenterTests.swift; sourceTree = "<group>"; };
 		A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobDetailsView.storyboard; sourceTree = "<group>"; };
 		A2ACACF01D63157500E536C3 /* JobRemovalView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobRemovalView.storyboard; sourceTree = "<group>"; };
 		A2F398291D520A550078A513 /* FlowCoordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +57,9 @@
 		A2F6E28E1D64554F00E25801 /* JobDetails2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetails2ViewController.swift; sourceTree = "<group>"; };
 		A2F6E2901D64578900E25801 /* JobDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsViewModel.swift; sourceTree = "<group>"; };
 		A2F6E2921D6460D100E25801 /* JobDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobDetailsView.xib; sourceTree = "<group>"; };
+		A2F6E2951D64692200E25801 /* JobDetailsInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsInteractorTests.swift; sourceTree = "<group>"; };
+		A2F6E2961D64692200E25801 /* JobDetailsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsPresenterTests.swift; sourceTree = "<group>"; };
+		A2F6E29A1D64697900E25801 /* JobDetailsViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,16 +110,6 @@
 			path = "JobRemovalScene-MVC";
 			sourceTree = "<group>";
 		};
-		A28E82F41D6337EC00A9544E /* JobDetails */ = {
-			isa = PBXGroup;
-			children = (
-				A28E82F51D63380600A9544E /* JobDetailsInteractorTests.swift */,
-				A28E82F71D633DC200A9544E /* JobDetailsPresenterTests.swift */,
-			);
-			name = JobDetails;
-			path = Scenes/JobDetails;
-			sourceTree = "<group>";
-		};
 		A2F398201D520A550078A513 = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +145,8 @@
 		A2F398401D520A560078A513 /* FlowCoordinatorsTests */ = {
 			isa = PBXGroup;
 			children = (
-				A28E82F41D6337EC00A9544E /* JobDetails */,
+				A2F6E2991D64692D00E25801 /* JobDetails-MVVM */,
+				A2F6E2941D64692200E25801 /* JobDetails-VIPER */,
 				A2F398431D520A560078A513 /* Info.plist */,
 			);
 			path = FlowCoordinatorsTests;
@@ -176,6 +169,25 @@
 				A2F6E2921D6460D100E25801 /* JobDetailsView.xib */,
 			);
 			path = "JobDetailsScene-MVVM";
+			sourceTree = "<group>";
+		};
+		A2F6E2941D64692200E25801 /* JobDetails-VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				A2F6E2951D64692200E25801 /* JobDetailsInteractorTests.swift */,
+				A2F6E2961D64692200E25801 /* JobDetailsPresenterTests.swift */,
+			);
+			name = "JobDetails-VIPER";
+			path = "Scenes/JobDetails-VIPER";
+			sourceTree = "<group>";
+		};
+		A2F6E2991D64692D00E25801 /* JobDetails-MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				A2F6E29A1D64697900E25801 /* JobDetailsViewModelTests.swift */,
+			);
+			name = "JobDetails-MVVM";
+			path = "Scenes/JobDetails-MVVM";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,8 +310,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A28E82F61D63380600A9544E /* JobDetailsInteractorTests.swift in Sources */,
-				A28E82F81D633DC200A9544E /* JobDetailsPresenterTests.swift in Sources */,
+				A2F6E2971D64692200E25801 /* JobDetailsInteractorTests.swift in Sources */,
+				A2F6E2981D64692200E25801 /* JobDetailsPresenterTests.swift in Sources */,
+				A2F6E29B1D64697900E25801 /* JobDetailsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
