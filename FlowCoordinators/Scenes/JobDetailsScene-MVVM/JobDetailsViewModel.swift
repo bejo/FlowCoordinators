@@ -36,27 +36,19 @@ final class JobDetailsViewModel: JobDetailsViewModelType {
     }
 
     var id: Int {
-        get {
-            return job.id
-        }
+        return job.id
     }
 
     var title: String {
-        get {
-            return job.title
-        }
+        return job.title
     }
 
     var creationDate: String {
-        get {
-            return stringFromDate(job.createdAt)
-        }
+        return stringFromDate(job.createdAt)
     }
 
     var skillsList: String {
-        get {
-            return stringFromArray(job.skills)
-        }
+        return stringFromArray(job.skills)
     }
 
     func refreshJob() {
