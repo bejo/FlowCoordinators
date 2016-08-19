@@ -16,29 +16,35 @@ import UIKit
  */
 final class RootFlowCoordinator {
     private let window: UIWindow
-    private let createJobDetails: JobDetailsSceneConstructor
+    private let createJobDetails: (JobDetailsRouterable, Int) -> UIViewController
     private let createJobRemoval: JobRemovalSceneConstructor
-    private let jobsRepository: JobsRepository // here the coordinator acts also as a dependency container
+    private let createUserProfileFlow: (UIViewController)->UserProfileFlowCoordinator
 
+    private var childFlowCoordinators: [AnyObject]?
     private weak var jobDetailsViewController: UIViewController?
     private weak var jobRemovalViewController: UIViewController?
 
     init(window: UIWindow,
-         jobDetailsConstructor: JobDetailsSceneConstructor,
+         jobDetailsConstructor: (JobDetailsRouterable, Int) -> UIViewController,
          jobRemovalConstructor: JobRemovalSceneConstructor,
-         jobsRepository: JobsRepository) {
+         userProfileFlowConstructor: (UIViewController)->UserProfileFlowCoordinator) {
         self.window = window
         self.createJobDetails = jobDetailsConstructor
         self.createJobRemoval = jobRemovalConstructor
-        self.jobsRepository = jobsRepository
+        self.createUserProfileFlow = userProfileFlowConstructor
     }
 
     func start() {
-        let jobDetailsVC = createJobDetails(self, jobsRepository, 123)
+        let jobDetailsVC = createJobDetails(self, 123)
         jobDetailsViewController = jobDetailsVC
 
         window.rootViewController = jobDetailsVC
         window.makeKeyAndVisible()
+    }
+
+    func showUserProfile() {
+        let userProfileFC = createUserProfileFlow(window.rootViewController!)
+        userProfileFC.start()
     }
 }
 

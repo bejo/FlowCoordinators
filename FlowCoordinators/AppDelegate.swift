@@ -13,14 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var rootFC: RootFlowCoordinator? // The root coordinator lifetime should be equal to application's lifetime. Therefore it's strongly retained by AppDelegate.
+    let mainFactory = MainFactory()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window = window
-        rootFC = RootFlowCoordinator.init(window: window,
-                                          jobDetailsConstructor: JobDetailsViewController.createJobDetailsSceneWithRouter,
-                                          jobRemovalConstructor: JobRemovalViewController.createJobRemovalSceneWithEventHandler,
-                                          jobsRepository: JobsRepository())
+        rootFC = RootFlowCoordinator(window: window,
+                                     jobDetailsConstructor: mainFactory.jobDetailsConstructor,
+                                     jobRemovalConstructor: JobRemovalViewController.createJobRemovalSceneWithEventHandler,
+                                     userProfileFlowConstructor: mainFactory.userProfileFlowCoordinatorConstructor)
         rootFC?.start()
         return true
     }
