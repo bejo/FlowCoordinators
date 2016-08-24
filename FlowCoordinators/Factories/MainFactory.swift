@@ -24,7 +24,7 @@ extension MainFactory: JobDetailsSceneFactoryType {
 }
 
 extension MainFactory: JobRemovalSceneFactoryType {
-    func createJobRemovalScene(eventHandler handler: JobRemovalViewDelegate) -> UIViewController {
+    func createJobRemovalScene(eventHandler handler: JobRemovalViewDelegate) -> JobRemovalViewSceneType {
         return JobRemovalViewController.createJobRemovalSceneWithEventHandler(handler)
     }
 }

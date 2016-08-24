@@ -12,12 +12,16 @@ protocol JobRemovalViewDelegate: class {
     func dismissButtonTapped()
 }
 
+protocol JobRemovalViewSceneType: SceneType {
+
+}
+
 /**
  A sample scene implemented using pure MVC pattern. It's MVC just to show that
  flow coordinators don't depends on scenes architecture. That is true as long as
  we use a subclass of UIViewController as a scene main interface.
  */
-final class JobRemovalViewController: UIViewController {
+final class JobRemovalViewController: UIViewController, JobRemovalViewSceneType {
     weak var delegate: JobRemovalViewDelegate?
 
     @IBAction func dismissButtonTapped(sender: AnyObject) {
@@ -27,7 +31,7 @@ final class JobRemovalViewController: UIViewController {
 
 // MARK: Constructor
 extension JobRemovalViewController {
-    static func createJobRemovalSceneWithEventHandler(handler: JobRemovalViewDelegate) -> UIViewController {
+    static func createJobRemovalSceneWithEventHandler(handler: JobRemovalViewDelegate) -> JobRemovalViewSceneType {
         let jobRemovalVC = UIStoryboard(name: "JobRemovalView", bundle: nil).instantiateInitialViewController() as! JobRemovalViewController
         jobRemovalVC.delegate = handler
         return jobRemovalVC

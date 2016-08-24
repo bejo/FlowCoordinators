@@ -18,7 +18,7 @@ protocol JobDetailsSceneFactoryType {
 }
 
 protocol JobRemovalSceneFactoryType {
-    func createJobRemovalScene(eventHandler _: JobRemovalViewDelegate) -> UIViewController
+    func createJobRemovalScene(eventHandler _: JobRemovalViewDelegate) -> JobRemovalViewSceneType
 }
 
 /**
@@ -65,9 +65,9 @@ final class RootFlowCoordinator {
 extension RootFlowCoordinator: JobDetailsRouterable {
     func showJobRemovalScreen(jobID: Int) {
         let jobRemovalVC = jobRemovalSceneFactory.createJobRemovalScene(eventHandler: self)
-        jobRemovalViewController = jobRemovalVC
+        jobRemovalViewController = jobRemovalVC.viewController
 
-        jobDetailsViewController?.presentViewController(jobRemovalVC, animated: true, completion: nil)
+        jobDetailsViewController?.presentViewController(jobRemovalVC.viewController, animated: true, completion: nil)
     }
 }
 

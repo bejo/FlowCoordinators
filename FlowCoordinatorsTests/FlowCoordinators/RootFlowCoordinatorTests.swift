@@ -48,7 +48,7 @@ class RootFlowCoordinatorTests: XCTestCase {
         sut.showJobRemovalScreen(123)
 
         let presentedVC = jobDetailsFactorySpy.returnedScene.interceptedViewControllerToPresent
-        let jobRemovalVC = jobRemovalFactorySpy.returnedScene
+        let jobRemovalVC = jobRemovalFactorySpy.returnedScene.viewController
         XCTAssertEqual(presentedVC, jobRemovalVC, "The coordinator should present a Job Removal VC over a Job Details VC.")
     }
 }
@@ -61,10 +61,14 @@ private final class JobDetailsFactorySpy: JobDetailsSceneFactoryType {
 }
 
 private final class JobRemovalFactorySpy: JobRemovalSceneFactoryType {
-    var returnedScene = ViewControllerSpy()
-    private func createJobRemovalScene(eventHandler _: JobRemovalViewDelegate) -> UIViewController {
+    var returnedScene = JobRemovalSceneSpy()
+    private func createJobRemovalScene(eventHandler _: JobRemovalViewDelegate) -> JobRemovalViewSceneType {
         return returnedScene
     }
+}
+
+private final class JobRemovalSceneSpy: JobRemovalViewSceneType {
+    private(set) var viewController: UIViewController = ViewControllerSpy()
 }
 
 private final class UserProfileFlowFactorySpy: UserProfileFlowFactoryType {
