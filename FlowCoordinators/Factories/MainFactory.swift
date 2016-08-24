@@ -9,24 +9,35 @@
 import UIKit
 
 final class MainFactory {
-    func jobDetailsConstructor(router: JobDetailsRouterable,
-                               jobID: Int) -> UIViewController {
-        return JobDetailsViewController.createJobDetailsSceneWithRouter(router,
-                                                                        jobsRepository: jobsRepository,
-                                                                        jobID: jobID)
-    }
-
-    func userProfileFlowCoordinatorConstructor(parentViewController: UIViewController) -> UserProfileFlowCoordinator {
-        return UserProfileFlowCoordinator(parentViewController: parentViewController,
-                                          userProfileConstructor: userProfileSceneConstructor )
-    }
-
     //MARK: Private
     private lazy var jobsRepository: JobsRepository = { return JobsRepository() }()
 
     private lazy var userRepository: UserRepository = { return UserRepository() }()
+}
 
-    private func userProfileSceneConstructor() -> UserProfileSceneType {
+extension MainFactory: JobDetailsSceneFactoryType {
+    func createJobDetailsScene(router router: JobDetailsRouterable, jobID: Int) -> UIViewController {
+        return JobDetailsViewController.createJobDetailsSceneWithRouter(router,
+                                                                        jobsRepository: jobsRepository,
+                                                                        jobID: jobID)
+    }
+}
+
+extension MainFactory: JobRemovalSceneFactoryType {
+    func createJobRemovalScene(eventHandler handler: JobRemovalViewDelegate) -> UIViewController {
+        return JobRemovalViewController.createJobRemovalSceneWithEventHandler(handler)
+    }
+}
+
+extension MainFactory: UserProfileFlowFactoryType {
+    func createUserProfileFlow(parentViewController pvc: UIViewController) -> UserProfileFlowCoordinator {
+        return UserProfileFlowCoordinator(parentViewController: pvc,
+                                          userProfileSceneFactory: self)
+    }
+}
+
+extension MainFactory: UserProfileSceneFactoryType {
+    func createUserProfileScene() -> UserProfileSceneType {
         return UserProfileViewController.createUserProfileSceneWithUserRepo(userRepository)
     }
 }

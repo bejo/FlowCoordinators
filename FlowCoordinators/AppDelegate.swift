@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window = window
         rootFC = RootFlowCoordinator(window: window,
-                                     jobDetailsConstructor: mainFactory.jobDetailsConstructor,
-                                     jobRemovalConstructor: JobRemovalViewController.createJobRemovalSceneWithEventHandler,
-                                     userProfileFlowConstructor: mainFactory.userProfileFlowCoordinatorConstructor)
+                                     jobDetailsSceneFactory: mainFactory,
+                                     jobRemovalSceneFactory: mainFactory,
+                                     userProfileFlowFactory: mainFactory)
         rootFC?.start()
         return true
     }

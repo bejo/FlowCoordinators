@@ -8,6 +8,19 @@
 
 import UIKit
 
+protocol UserProfileFlowFactoryType {
+    func createUserProfileFlow(parentViewController _: UIViewController) -> UserProfileFlowCoordinator
+}
+
+protocol JobDetailsSceneFactoryType {
+    func createJobDetailsScene(router _: JobDetailsRouterable,
+                               jobID: Int) -> UIViewController
+}
+
+protocol JobRemovalSceneFactoryType {
+    func createJobRemovalScene(eventHandler _: JobRemovalViewDelegate) -> UIViewController
+}
+
 /**
  Flow coordinators are responsible for routing/navigating between view controllers.
 
@@ -16,26 +29,27 @@ import UIKit
  */
 final class RootFlowCoordinator {
     private let window: UIWindow
-    private let createJobDetails: (JobDetailsRouterable, Int) -> UIViewController
-    private let createJobRemoval: JobRemovalSceneConstructor
-    private let createUserProfileFlow: (UIViewController)->UserProfileFlowCoordinator
+    private let jobDetailsSceneFactory: JobDetailsSceneFactoryType
+    private let jobRemovalSceneFactory: JobRemovalSceneFactoryType
+    private let userProfileFlowFactory: UserProfileFlowFactoryType
 
     private var childFlowCoordinators: [AnyObject]?
     private weak var jobDetailsViewController: UIViewController?
     private weak var jobRemovalViewController: UIViewController?
 
     init(window: UIWindow,
-         jobDetailsConstructor: (JobDetailsRouterable, Int) -> UIViewController,
-         jobRemovalConstructor: JobRemovalSceneConstructor,
-         userProfileFlowConstructor: (UIViewController)->UserProfileFlowCoordinator) {
+         jobDetailsSceneFactory: JobDetailsSceneFactoryType,
+         jobRemovalSceneFactory: JobRemovalSceneFactoryType,
+         userProfileFlowFactory: UserProfileFlowFactoryType) {
         self.window = window
-        self.createJobDetails = jobDetailsConstructor
-        self.createJobRemoval = jobRemovalConstructor
-        self.createUserProfileFlow = userProfileFlowConstructor
+        self.jobDetailsSceneFactory = jobDetailsSceneFactory
+        self.jobRemovalSceneFactory = jobRemovalSceneFactory
+        self.userProfileFlowFactory = userProfileFlowFactory
     }
 
     func start() {
-        let jobDetailsVC = createJobDetails(self, 123)
+        let jobDetailsVC = jobDetailsSceneFactory.createJobDetailsScene(router: self,
+                                                                        jobID: 123)
         jobDetailsViewController = jobDetailsVC
 
         window.rootViewController = jobDetailsVC
@@ -43,14 +57,14 @@ final class RootFlowCoordinator {
     }
 
     func showUserProfile() {
-        let userProfileFC = createUserProfileFlow(window.rootViewController!)
+        let userProfileFC = userProfileFlowFactory.createUserProfileFlow(parentViewController: window.rootViewController!)
         userProfileFC.start()
     }
 }
 
 extension RootFlowCoordinator: JobDetailsRouterable {
     func showJobRemovalScreen(jobID: Int) {
-        let jobRemovalVC = createJobRemoval(self)
+        let jobRemovalVC = jobRemovalSceneFactory.createJobRemovalScene(eventHandler: self)
         jobRemovalViewController = jobRemovalVC
 
         jobDetailsViewController?.presentViewController(jobRemovalVC, animated: true, completion: nil)

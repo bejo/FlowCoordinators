@@ -16,8 +16,6 @@ class UserProfileViewController: UIViewController, UserProfileSceneType {
 }
 
 // MARK: Constructor
-typealias UserProfileSceneConstructor = (UserRepositoryType) -> UserProfileSceneType
-
 extension UserProfileViewController {
     static func createUserProfileSceneWithUserRepo(repo: UserRepositoryType) -> UserProfileViewController {
         return UserProfileViewController()

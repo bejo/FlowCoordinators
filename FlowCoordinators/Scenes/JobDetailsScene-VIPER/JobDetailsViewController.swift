@@ -56,8 +56,6 @@ extension JobDetailsViewController: JobDetailsViewInterface {
 }
 
 // MARK: Constructor
-typealias JobDetailsSceneConstructor = (JobDetailsRouterable, JobsRepository, Int) -> UIViewController
-
 extension JobDetailsViewController {
     static func createJobDetailsSceneWithRouter(router: JobDetailsRouterable,
                                                 jobsRepository: JobsRepository,

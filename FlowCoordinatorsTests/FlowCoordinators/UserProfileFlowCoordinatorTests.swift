@@ -10,31 +10,31 @@ import XCTest
 @testable import FlowCoordinators
 
 class UserProfileFlowCoordinatorTests: XCTestCase {
-    private var parentViewController: ViewControllerSpy!
-    private var constructorSpy: UserProfileConstructorSpy!
+    private var parentViewControllerSpy: ViewControllerSpy!
+    private var sceneFactorySpy: UserProfileSceneFactorySpy!
     private var sut: UserProfileFlowCoordinator!
 
     override func setUp() {
         super.setUp()
-        parentViewController = ViewControllerSpy()
-        constructorSpy = UserProfileConstructorSpy()
-        sut = UserProfileFlowCoordinator(parentViewController: parentViewController,
-                                         userProfileConstructor: constructorSpy.constructor)
+        parentViewControllerSpy = ViewControllerSpy()
+        sceneFactorySpy = UserProfileSceneFactorySpy()
+        sut = UserProfileFlowCoordinator(parentViewController: parentViewControllerSpy,
+                                         userProfileSceneFactory: sceneFactorySpy)
     }
 
     func testStart() {
         sut.start()
 
-        let presentedVC = parentViewController.interceptedViewControllerToPresent
-        let userProfileVC = constructorSpy.scene.viewController
+        let presentedVC = parentViewControllerSpy.interceptedViewControllerToPresent
+        let userProfileVC = sceneFactorySpy.returnedScene.viewController
         XCTAssertEqual(presentedVC, userProfileVC, "The coordinator should present the user profile VC.")
     }
 }
 
-final class UserProfileConstructorSpy {
-    let scene = UserProfileSceneSpy()
-    func constructor() -> UserProfileSceneType {
-        return self.scene
+final class UserProfileSceneFactorySpy: UserProfileSceneFactoryType {
+    let returnedScene = UserProfileSceneSpy()
+    func createUserProfileScene() -> UserProfileSceneType {
+        return returnedScene
     }
 }
 

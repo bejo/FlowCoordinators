@@ -8,21 +8,25 @@
 
 import UIKit
 
+protocol UserProfileSceneFactoryType {
+    func createUserProfileScene()->UserProfileSceneType
+}
+
 final class UserProfileFlowCoordinator {
     private let parentViewController: UIViewController
-    private let createUserProfile: ()->UserProfileSceneType
+    private let userProfileSceneFactory: UserProfileSceneFactoryType
 
     private weak var jobDetailsViewController: UIViewController?
     private weak var jobRemovalViewController: UIViewController?
 
     init(parentViewController: UIViewController,
-         userProfileConstructor: ()->UserProfileSceneType) {
+         userProfileSceneFactory: UserProfileSceneFactoryType) {
         self.parentViewController = parentViewController
-        self.createUserProfile = userProfileConstructor
+        self.userProfileSceneFactory = userProfileSceneFactory
     }
 
     func start() {
-        let userProfileScene = createUserProfile()
+        let userProfileScene = userProfileSceneFactory.createUserProfileScene()
         parentViewController.presentViewController(userProfileScene.viewController,
                                                    animated: true,
                                                    completion: nil)

@@ -26,8 +26,6 @@ final class JobRemovalViewController: UIViewController {
 }
 
 // MARK: Constructor
-typealias JobRemovalSceneConstructor = (JobRemovalViewDelegate) -> UIViewController
-
 extension JobRemovalViewController {
     static func createJobRemovalSceneWithEventHandler(handler: JobRemovalViewDelegate) -> UIViewController {
         let jobRemovalVC = UIStoryboard(name: "JobRemovalView", bundle: nil).instantiateInitialViewController() as! JobRemovalViewController
