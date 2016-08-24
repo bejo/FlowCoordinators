@@ -41,12 +41,3 @@ final class UserProfileSceneFactorySpy: UserProfileSceneFactoryType {
 final class UserProfileSceneSpy: UserProfileSceneType {
     let viewController = UIViewController()
 }
-
-final class ViewControllerSpy: UIViewController {
-    var interceptedViewControllerToPresent: UIViewController? = nil
-    override func presentViewController(viewControllerToPresent: UIViewController,
-                                        animated flag: Bool,
-                                                 completion: (() -> Void)?) {
-        interceptedViewControllerToPresent = viewControllerToPresent
-    }
-}

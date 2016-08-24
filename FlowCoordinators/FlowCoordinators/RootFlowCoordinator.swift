@@ -9,7 +9,7 @@
 import UIKit
 
 protocol UserProfileFlowFactoryType {
-    func createUserProfileFlow(parentViewController _: UIViewController) -> UserProfileFlowCoordinator
+    func createUserProfileFlow(parentViewController _: UIViewController) -> UserProfileFlowCoordinatorType
 }
 
 protocol JobDetailsSceneFactoryType {

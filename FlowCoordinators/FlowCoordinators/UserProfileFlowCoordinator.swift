@@ -12,7 +12,11 @@ protocol UserProfileSceneFactoryType {
     func createUserProfileScene()->UserProfileSceneType
 }
 
-final class UserProfileFlowCoordinator {
+protocol UserProfileFlowCoordinatorType {
+    func start()
+}
+
+final class UserProfileFlowCoordinator: UserProfileFlowCoordinatorType {
     private let parentViewController: UIViewController
     private let userProfileSceneFactory: UserProfileSceneFactoryType
 

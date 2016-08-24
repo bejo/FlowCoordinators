@@ -25,6 +25,8 @@
 		A265D08D1D64A4E600E27DCC /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A265D08C1D64A4E600E27DCC /* UserRepository.swift */; };
 		A265D08F1D64A51400E27DCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A265D08E1D64A51400E27DCC /* User.swift */; };
 		A2ACACEF1D6313D300E536C3 /* JobDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */; };
+		A2D64C381D6DC40700D5B9D5 /* RootFlowCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D64C371D6DC40700D5B9D5 /* RootFlowCoordinatorTests.swift */; };
+		A2D64C3B1D6DCD4900D5B9D5 /* ViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D64C3A1D6DCD4900D5B9D5 /* ViewControllerSpy.swift */; };
 		A2DDB9541D673C41005DE3F2 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDB9531D673C41005DE3F2 /* MainFactory.swift */; };
 		A2F3982D1D520A560078A513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3982C1D520A550078A513 /* AppDelegate.swift */; };
 		A2F398341D520A560078A513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F398331D520A560078A513 /* Assets.xcassets */; };
@@ -64,6 +66,8 @@
 		A265D08C1D64A4E600E27DCC /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		A265D08E1D64A51400E27DCC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobDetailsView.storyboard; sourceTree = "<group>"; };
+		A2D64C371D6DC40700D5B9D5 /* RootFlowCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFlowCoordinatorTests.swift; sourceTree = "<group>"; };
+		A2D64C3A1D6DCD4900D5B9D5 /* ViewControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSpy.swift; sourceTree = "<group>"; };
 		A2DDB9531D673C41005DE3F2 /* MainFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
 		A2F398291D520A550078A513 /* FlowCoordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F3982C1D520A550078A513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				A24DFADC1D65FC36000DD816 /* UserProfileFlowCoordinatorTests.swift */,
+				A2D64C371D6DC40700D5B9D5 /* RootFlowCoordinatorTests.swift */,
 			);
 			path = FlowCoordinators;
 			sourceTree = "<group>";
@@ -187,6 +192,14 @@
 			path = FlowCoordinators;
 			sourceTree = "<group>";
 		};
+		A2D64C391D6DCD3500D5B9D5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A2D64C3A1D6DCD4900D5B9D5 /* ViewControllerSpy.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A2DDB9521D673C2D005DE3F2 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +245,7 @@
 		A2F398401D520A560078A513 /* FlowCoordinatorsTests */ = {
 			isa = PBXGroup;
 			children = (
+				A2D64C391D6DCD3500D5B9D5 /* Helpers */,
 				A24DFAD21D65FC17000DD816 /* FlowCoordinators */,
 				A24DFAD31D65FC17000DD816 /* Scenes */,
 				A2F398431D520A560078A513 /* Info.plist */,
@@ -390,7 +404,9 @@
 				A24DFAD91D65FC17000DD816 /* JobDetailsViewModelTests.swift in Sources */,
 				A24DFADA1D65FC17000DD816 /* JobDetailsInteractorTests.swift in Sources */,
 				A24DFADB1D65FC17000DD816 /* JobDetailsPresenterTests.swift in Sources */,
+				A2D64C381D6DC40700D5B9D5 /* RootFlowCoordinatorTests.swift in Sources */,
 				A24DFADD1D65FC36000DD816 /* UserProfileFlowCoordinatorTests.swift in Sources */,
+				A2D64C3B1D6DCD4900D5B9D5 /* ViewControllerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

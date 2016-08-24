@@ -30,7 +30,7 @@ extension MainFactory: JobRemovalSceneFactoryType {
 }
 
 extension MainFactory: UserProfileFlowFactoryType {
-    func createUserProfileFlow(parentViewController pvc: UIViewController) -> UserProfileFlowCoordinator {
+    func createUserProfileFlow(parentViewController pvc: UIViewController) -> UserProfileFlowCoordinatorType {
         return UserProfileFlowCoordinator(parentViewController: pvc,
                                           userProfileSceneFactory: self)
     }
