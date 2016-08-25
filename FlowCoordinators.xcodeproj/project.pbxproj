@@ -27,6 +27,9 @@
 		A2ACACEF1D6313D300E536C3 /* JobDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */; };
 		A2D64C381D6DC40700D5B9D5 /* RootFlowCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D64C371D6DC40700D5B9D5 /* RootFlowCoordinatorTests.swift */; };
 		A2D64C3B1D6DCD4900D5B9D5 /* ViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D64C3A1D6DCD4900D5B9D5 /* ViewControllerSpy.swift */; };
+		A2D64C3F1D6DD90E00D5B9D5 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D64C3E1D6DD90E00D5B9D5 /* Swinject.framework */; };
+		A2D64C401D6DD90E00D5B9D5 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A2D64C3E1D6DD90E00D5B9D5 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A2D64C431D6DF5E800D5B9D5 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D64C3E1D6DD90E00D5B9D5 /* Swinject.framework */; };
 		A2DDB9541D673C41005DE3F2 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDB9531D673C41005DE3F2 /* MainFactory.swift */; };
 		A2F3982D1D520A560078A513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3982C1D520A550078A513 /* AppDelegate.swift */; };
 		A2F398341D520A560078A513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F398331D520A560078A513 /* Assets.xcassets */; };
@@ -46,6 +49,20 @@
 			remoteInfo = FlowCoordinators;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2D64C411D6DD90E00D5B9D5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2D64C401D6DD90E00D5B9D5 /* Swinject.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A21CEEE31D548348001C67EF /* JobsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsRepository.swift; sourceTree = "<group>"; };
@@ -68,6 +85,7 @@
 		A2ACACEE1D6313D300E536C3 /* JobDetailsView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobDetailsView.storyboard; sourceTree = "<group>"; };
 		A2D64C371D6DC40700D5B9D5 /* RootFlowCoordinatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFlowCoordinatorTests.swift; sourceTree = "<group>"; };
 		A2D64C3A1D6DCD4900D5B9D5 /* ViewControllerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSpy.swift; sourceTree = "<group>"; };
+		A2D64C3E1D6DD90E00D5B9D5 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		A2DDB9531D673C41005DE3F2 /* MainFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
 		A2F398291D520A550078A513 /* FlowCoordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F3982C1D520A550078A513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2D64C3F1D6DD90E00D5B9D5 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2D64C431D6DF5E800D5B9D5 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +220,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A2D64C441D6DF63100D5B9D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2D64C3E1D6DD90E00D5B9D5 /* Swinject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A2DDB9521D673C2D005DE3F2 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +241,7 @@
 			children = (
 				A2F3982B1D520A550078A513 /* FlowCoordinators */,
 				A2F398401D520A560078A513 /* FlowCoordinatorsTests */,
+				A2D64C441D6DF63100D5B9D5 /* Frameworks */,
 				A2F3982A1D520A550078A513 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -284,6 +313,7 @@
 				A2F398251D520A550078A513 /* Sources */,
 				A2F398261D520A550078A513 /* Frameworks */,
 				A2F398271D520A550078A513 /* Resources */,
+				A2D64C411D6DD90E00D5B9D5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -519,6 +549,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlowCoordinators/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.FlowCoordinators;
@@ -530,6 +564,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlowCoordinators/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.FlowCoordinators;
@@ -541,6 +579,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlowCoordinatorsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.FlowCoordinatorsTests;
@@ -553,6 +595,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlowCoordinatorsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.FlowCoordinatorsTests;

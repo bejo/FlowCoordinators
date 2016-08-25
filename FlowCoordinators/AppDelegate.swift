@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Swinject
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,11 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window = window
+
         rootFC = RootFlowCoordinator(window: window,
                                      jobDetailsSceneFactory: mainFactory,
-                                     jobRemovalSceneFactory: mainFactory,
+                                     container: setupSwinject(),
                                      userProfileFlowFactory: mainFactory)
         rootFC?.start()
         return true
+    }
+
+    func setupSwinject() -> Container {
+        let container = Container()
+
+        container.register(JobRemovalViewSceneType.self) { (_: ResolverType, eventHandler) -> JobRemovalViewSceneType in
+            return JobRemovalViewController.createJobRemovalSceneWithEventHandler(eventHandler)
+        }
+
+        return container
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Swinject
 
 protocol UserProfileFlowFactoryType {
     func createUserProfileFlow(parentViewController _: UIViewController) -> UserProfileFlowCoordinatorType
@@ -30,7 +31,7 @@ protocol JobRemovalSceneFactoryType {
 final class RootFlowCoordinator {
     private let window: UIWindow
     private let jobDetailsSceneFactory: JobDetailsSceneFactoryType
-    private let jobRemovalSceneFactory: JobRemovalSceneFactoryType
+    private let container: Container
     private let userProfileFlowFactory: UserProfileFlowFactoryType
 
     private var childFlowCoordinators: [AnyObject]?
@@ -39,11 +40,11 @@ final class RootFlowCoordinator {
 
     init(window: UIWindow,
          jobDetailsSceneFactory: JobDetailsSceneFactoryType,
-         jobRemovalSceneFactory: JobRemovalSceneFactoryType,
+         container: Container,
          userProfileFlowFactory: UserProfileFlowFactoryType) {
         self.window = window
         self.jobDetailsSceneFactory = jobDetailsSceneFactory
-        self.jobRemovalSceneFactory = jobRemovalSceneFactory
+        self.container = container
         self.userProfileFlowFactory = userProfileFlowFactory
     }
 
@@ -64,7 +65,7 @@ final class RootFlowCoordinator {
 
 extension RootFlowCoordinator: JobDetailsRouterable {
     func showJobRemovalScreen(jobID: Int) {
-        let jobRemovalVC = jobRemovalSceneFactory.createJobRemovalScene(eventHandler: self)
+        let jobRemovalVC = container.resolve(JobRemovalViewSceneType.self, argument: self)!
         jobRemovalViewController = jobRemovalVC.viewController
 
         jobDetailsViewController?.presentViewController(jobRemovalVC.viewController, animated: true, completion: nil)
