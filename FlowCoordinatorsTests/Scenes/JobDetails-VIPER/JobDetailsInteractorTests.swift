@@ -12,12 +12,12 @@ import XCTest
 class JobDetailsInteractorTests: XCTestCase {
     private var sut: JobDetailsInteractor!
     private var jobsRepoSpy: JobsRepositorySpy!
-    private var delegateSpy: JobDetailsInteractorDelegateSpy!
+    private var delegateSpy: JobDetailsInteractableDelegateSpy!
 
     override func setUp() {
         super.setUp()
         jobsRepoSpy = JobsRepositorySpy()
-        delegateSpy = JobDetailsInteractorDelegateSpy()
+        delegateSpy = JobDetailsInteractableDelegateSpy()
         sut = JobDetailsInteractor(jobsRepository: jobsRepoSpy, jobID: 123)
         sut.delegate = delegateSpy
     }
@@ -55,7 +55,7 @@ private final class JobsRepositorySpy: JobsRepositoryType {
     }
 }
 
-private final class JobDetailsInteractorDelegateSpy: JobDetailsInteractorDelegate {
+private final class JobDetailsInteractableDelegateSpy: JobDetailsInteractableDelegate {
     var didInvokeJobDidChange = false
     private func jobDidChange() {
         didInvokeJobDidChange = true

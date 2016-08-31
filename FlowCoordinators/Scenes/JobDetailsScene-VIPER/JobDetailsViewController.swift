@@ -8,40 +8,40 @@
 
 import UIKit
 
-protocol JobDetailsViewEventHandler {
+protocol JobDetailsViewableDelegate {
     func removeButtonTapped()
     func refreshButtonTapped()
     func viewDidLoad()
 }
 
-protocol JobDetailsViewInterface: class {
+protocol JobDetailsViewable: class {
     func displayTilte(title: String)
     func displayCreationDate(date: String)
     func displaySkills(skills: String)
 }
 
 final class JobDetailsViewController: UIViewController {
-    private var eventHandler: JobDetailsViewEventHandler!
+    private var delegate: JobDetailsViewableDelegate!
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var skillsLabel: UILabel!
 
     @IBAction private func refreshButtonTapped(sender: UIButton) {
-        self.eventHandler.refreshButtonTapped()
+        self.delegate.refreshButtonTapped()
     }
 
     @IBAction private func removeButtonTapped(sender: UIButton) {
-        self.eventHandler.removeButtonTapped()
+        self.delegate.removeButtonTapped()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.eventHandler.viewDidLoad()
+        self.delegate.viewDidLoad()
     }
 }
 
-extension JobDetailsViewController: JobDetailsViewInterface {
+extension JobDetailsViewController: JobDetailsViewable {
     func displayTilte(title: String) {
         titleLabel.text = title
     }
@@ -65,7 +65,7 @@ extension JobDetailsViewController {
         let interactor = JobDetailsInteractor(jobsRepository: jobsRepository, jobID: jobID)
         let presenter = JobDetailsPresenter(router: router, interactor: interactor, view: jobDetailsVC)
         interactor.delegate = presenter
-        jobDetailsVC.eventHandler = presenter
+        jobDetailsVC.delegate = presenter
 
         return jobDetailsVC
     }

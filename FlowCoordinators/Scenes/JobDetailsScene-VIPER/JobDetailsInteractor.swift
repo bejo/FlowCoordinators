@@ -8,13 +8,18 @@
 
 import Foundation
 
-protocol JobDetailsInteractorDelegate: class {
+protocol JobDetailsInteractable {
+    var job: Job { get }
+    func refreshJob()
+}
+
+protocol JobDetailsInteractableDelegate: class {
     func jobDidChange()
 }
 
 final class JobDetailsInteractor: JobDetailsInteractable {
     private let jobsRepository: JobsRepositoryType
-    weak var delegate: JobDetailsInteractorDelegate?
+    weak var delegate: JobDetailsInteractableDelegate?
 
     var job: Job {
         didSet {

@@ -13,13 +13,13 @@ class JobDetailsPresenterTests: XCTestCase {
     private var sut: JobDetailsPresenter!
     private var routerSpy: JobDetailsRouterableSpy!
     private var interactorSpy: JobDetailsInteractorSpy!
-    private var viewSpy: JobDetailsViewInterfaceSpy!
+    private var viewSpy: JobDetailsViewableSpy!
     
     override func setUp() {
         super.setUp()
         routerSpy = JobDetailsRouterableSpy()
         interactorSpy = JobDetailsInteractorSpy()
-        viewSpy = JobDetailsViewInterfaceSpy()
+        viewSpy = JobDetailsViewableSpy()
         sut = JobDetailsPresenter(router: routerSpy,
                                   interactor: interactorSpy,
                                   view: viewSpy)
@@ -71,7 +71,7 @@ private final class JobDetailsInteractorSpy: JobDetailsInteractable {
     }
 }
 
-private final class JobDetailsViewInterfaceSpy: JobDetailsViewInterface {
+private final class JobDetailsViewableSpy: JobDetailsViewable {
     var interceptedTitle: String? = nil
     private func displayTilte(title: String) {
         interceptedTitle = title
